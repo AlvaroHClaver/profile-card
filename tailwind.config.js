@@ -10,8 +10,11 @@ export default {
         "card-bg": "#0F172BCC",
         "card-border": "#1C3984D",
         "primary-text": "#F1F5F9",
+        "details-text": "#8EC5FFB2",
         action: "#155DFC",
         "profile-bg": "#1c398e80",
+        "bullet-icon": "#51A2FF",
+        "bullet-text": "#CAD5E2",
       },
       backgroundImage: {
         "app-gradient":
