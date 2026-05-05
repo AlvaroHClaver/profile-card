@@ -11,6 +11,7 @@ export default {
         "card-border": "#1C3984D",
         "primary-text": "#F1F5F9",
         action: "#155DFC",
+        "profile-bg": "#1c398e80",
       },
       backgroundImage: {
         "app-gradient":
