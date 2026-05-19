@@ -6,6 +6,7 @@ import { About } from "./components/About";
 import { Avatar } from "./components/Avatar";
 import { BulletList } from "./components/BulletList";
 import { Header } from "./components/Header";
+import { BadgeList } from "./components/Badge/BadgeList";
 
 const items = [
   {
@@ -21,6 +22,7 @@ const items = [
     text: "Netcracker do Brasil",
   },
 ];
+const techBadges = ["React", "TypeScript", "Java", "SpringBoot"];
 
 function App() {
   return (
@@ -29,6 +31,7 @@ function App() {
       <Avatar />
       <About />
       <BulletList items={items} />
+      <BadgeList items={techBadges} />
     </main>
   );
 }

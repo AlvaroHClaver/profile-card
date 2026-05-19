@@ -15,6 +15,9 @@ export default {
         "profile-bg": "#1c398e80",
         "bullet-icon": "#51A2FF",
         "bullet-text": "#CAD5E2",
+        "badge-bg": "#16245680",
+        "badge-border": "#193CB84D",
+        "badge-font": "#BEDBFF",
       },
       backgroundImage: {
         "app-gradient":
