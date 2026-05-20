@@ -13,7 +13,7 @@ export const Header = ({
   labels,
 }: HeaderProps) => {
   return (
-    <header className="w-full bg-header-bg h-32 rounded-tl-2xl rounded-tr-2xl flex justify-end p-2.5">
+    <header className="w-full bg-header-bg h-[var(--header-height)] rounded-t-[var(--profile-card-radius)] flex justify-end p-2.5">
       <LanguageSwitch
         language={language}
         onLanguageChange={onLanguageChange}

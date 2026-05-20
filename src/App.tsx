@@ -1,8 +1,4 @@
 import { useEffect, useState } from "react";
-import { GrLocation } from "react-icons/gr";
-import { FiMail } from "react-icons/fi";
-import { IoBriefcaseOutline } from "react-icons/io5";
-import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 import "./App.css";
 import { About } from "./components/About";
 import { Avatar } from "./components/Avatar";
@@ -11,58 +7,54 @@ import { Header } from "./components/Header";
 import { BadgeList } from "./components/Badge/BadgeList";
 import { SocialBadgeList } from "./components/SocialBadge/SocialBadgeList";
 import type { Language } from "./i18n";
-import { translations } from "./i18n";
+import { profileConfig, translations } from "./i18n";
 import { MailToButton } from "./components/MailToButton";
+import { detailIcons, socialIcons } from "./config/icons";
+import { applyTheme, themeConfig } from "./config/theme";
 
-const getItems = (location: string) => [
-  {
-    icon: FiMail,
-    text: "alvarohibide@gmail.com",
-  },
-  {
-    icon: GrLocation,
-    text: location,
-  },
-  {
-    icon: IoBriefcaseOutline,
-    text: "Netcracker do Brasil",
-  },
-];
-const techBadges = ["React", "TypeScript", "Java", "SpringBoot"];
-const socialBadges = [
-  {
-    icon: IoLogoGithub,
-    link: "https://github.com/alvaro",
-  },
-  {
-    icon: IoLogoLinkedin,
-    link: "https://linkedin.com",
-  },
-];
-const email = "alvarohibide@gmail.com";
+const getInfoItems = (language: Language) =>
+  profileConfig.infoItems.map((item) => ({
+    icon: detailIcons[item.icon],
+    text: item.translations?.[language] ?? item.text ?? "",
+  }));
+
+const socialBadges = profileConfig.socialLinks.map((item) => ({
+  icon: socialIcons[item.icon],
+  label: item.label,
+  link: item.url,
+}));
 
 function App() {
-  const [language, setLanguage] = useState<Language>("pt");
+  const [language, setLanguage] = useState<Language>(
+    profileConfig.defaultLanguage,
+  );
   const t = translations[language];
-  const items = getItems(t.location);
+  const items = getInfoItems(language);
 
   useEffect(() => {
     document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
   }, [language]);
 
+  useEffect(() => {
+    applyTheme(themeConfig);
+  }, []);
+
   return (
-    <main className="w-90 md:w-lg bg-card-bg h-170 rounded-2xl relative text-primary-text flex flex-col items-center">
+    <main className="w-(--profile-card-width-mobile) md:w-(--profile-card-width) bg-card-bg h-(--profile-card-height) rounded-(--profile-card-radius) relative text-primary-text flex flex-col items-center">
       <Header
         language={language}
         onLanguageChange={setLanguage}
         labels={t.languageLabels}
       />
-      <Avatar />
+      <Avatar src={profileConfig.avatar.src} alt={profileConfig.avatar.alt} />
       <About name={t.name} role={t.role} description={t.about} />
       <BulletList items={items} />
-      <BadgeList items={techBadges} />
+      <BadgeList items={profileConfig.techBadges} />
       <SocialBadgeList items={socialBadges} />
-      <MailToButton email={email} label={t.contactButton} />
+      <MailToButton
+        email={profileConfig.contact.email}
+        label={t.contactButton}
+      />
     </main>
   );
 }

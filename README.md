@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# Profile Card
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Mini aplicação em React, TypeScript, Vite e Tailwind para publicar um cartão de perfil customizável.
 
-Currently, two official plugins are available:
+## Como rodar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Como customizar
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Os dados principais ficam em JSON para facilitar forks e ajustes no GitHub.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Conteúdo
+
+Edite `src/config/profile.json` para trocar:
+
+- nome, cargo, descrição e texto do botão em `translations`
+- idioma inicial em `defaultLanguage`
+- foto em `avatar.src`
+- e-mail de contato em `contact.email`
+- itens com ícones em `infoItems`
+- tecnologias em `techBadges`
+- links sociais em `socialLinks`
+
+Ícones disponíveis por padrão:
+
+- `infoItems`: `mail`, `location`, `briefcase`
+- `socialLinks`: `github`, `linkedin`
+
+Para adicionar novos ícones, importe-os em `src/config/icons.ts` e inclua uma nova chave em `detailIcons` ou `socialIcons`.
+
+### Cores e estilos
+
+Edite `src/config/theme.json` para trocar:
+
+- `colors`: cores dos textos, badges, botão, card e avatar
+- `gradients`: fundos da página, cabeçalho e botão principal
+- `layout`: largura, altura, raio do card, tamanho/posição do avatar e largura do conteúdo
+- `font.family`: fonte usada pela página
+
+As mudanças de tema são aplicadas como CSS variables, então o visual pode ser ajustado sem mexer nos componentes.
+
+## Build
+
+```bash
+npm run build
 ```

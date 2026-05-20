@@ -1,0 +1,62 @@
+{
+  "defaultLanguage": "pt",
+  "avatar": {
+    "src": "/avatar.jpg",
+    "alt": "Profile photo"
+  },
+  "contact": {
+    "email": "alvarohibide@gmail.com"
+  },
+  "infoItems": [
+    {
+      "icon": "mail",
+      "text": "alvarohibide@gmail.com"
+    },
+    {
+      "icon": "location",
+      "translations": {
+        "pt": "São Paulo, Brasil",
+        "en": "São Paulo, Brazil"
+      }
+    },
+    {
+      "icon": "briefcase",
+      "text": "Netcracker do Brasil"
+    }
+  ],
+  "techBadges": ["React", "TypeScript", "Java", "SpringBoot"],
+  "socialLinks": [
+    {
+      "icon": "github",
+      "url": "https://github.com/alvaro",
+      "label": "GitHub"
+    },
+    {
+      "icon": "linkedin",
+      "url": "https://linkedin.com",
+      "label": "LinkedIn"
+    }
+  ],
+  "translations": {
+    "pt": {
+      "name": "Seu Nome",
+      "role": "Desenvolvedor Web",
+      "about": "Criando experiências digitais incríveis com código limpo e design intuitivo. Apaixonado por tecnologia e inovação.",
+      "contactButton": "Entre em Contato",
+      "languageLabels": {
+        "pt": "Português",
+        "en": "Inglês"
+      }
+    },
+    "en": {
+      "name": "Your Name",
+      "role": "Web Developer",
+      "about": "Creating amazing digital experiences with clean code and intuitive design. Passionate about technology and innovation.",
+      "contactButton": "Get in Touch",
+      "languageLabels": {
+        "pt": "Portuguese",
+        "en": "English"
+      }
+    }
+  }
+}

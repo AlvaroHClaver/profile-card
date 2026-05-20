@@ -1,0 +1,34 @@
+{
+  "font": {
+    "family": "Inter, sans-serif"
+  },
+  "layout": {
+    "cardWidth": "32rem",
+    "cardWidthMobile": "90vw",
+    "cardHeight": "42.5rem",
+    "cardRadius": "1rem",
+    "contentWidth": "80%",
+    "headerHeight": "8rem",
+    "avatarSize": "8rem",
+    "avatarTop": "3.75rem",
+    "avatarLeft": "2rem"
+  },
+  "colors": {
+    "cardBg": "#0F172BCC",
+    "cardBorder": "#1C39844D",
+    "primaryText": "#F1F5F9",
+    "detailsText": "#8EC5FFB2",
+    "action": "#155DFC",
+    "profileBg": "#1C398E80",
+    "bulletIcon": "#51A2FF",
+    "bulletText": "#CAD5E2",
+    "badgeBg": "#16245680",
+    "badgeBorder": "#193CB84D",
+    "badgeFont": "#BEDBFF"
+  },
+  "gradients": {
+    "app": "linear-gradient(135deg, #0F172B 0%, #162456 50%, #000 100%)",
+    "header": "linear-gradient(90deg, rgba(28, 57, 142, 0.50) 0%, rgba(49, 44, 133, 0.50) 100%)",
+    "action": "linear-gradient(90deg, #155DFC 0%, #4F39F6 100%)"
+  }
+}

@@ -3,11 +3,43 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
+:root {
+  --avatar-left: 2rem;
+  --avatar-size: 8rem;
+  --avatar-top: 3.75rem;
+  --color-action: #155dfc;
+  --color-badge-bg: #16245680;
+  --color-badge-border: #193cb84d;
+  --color-badge-font: #bedbff;
+  --color-bullet-icon: #51a2ff;
+  --color-bullet-text: #cad5e2;
+  --color-card-bg: #0f172bcc;
+  --color-card-border: #1c39844d;
+  --color-details-text: #8ec5ffb2;
+  --color-primary-text: #f1f5f9;
+  --color-profile-bg: #1c398e80;
+  --content-width: 80%;
+  --font-family: Inter, sans-serif;
+  --gradient-action: linear-gradient(90deg, #155dfc 0%, #4f39f6 100%);
+  --gradient-app: linear-gradient(135deg, #0f172b 0%, #162456 50%, #000 100%);
+  --gradient-header: linear-gradient(
+    90deg,
+    rgba(28, 57, 142, 0.5) 0%,
+    rgba(49, 44, 133, 0.5) 100%
+  );
+  --header-height: 8rem;
+  --profile-card-height: 42.5rem;
+  --profile-card-radius: 1rem;
+  --profile-card-width: 32rem;
+  --profile-card-width-mobile: 90vw;
+}
+
 html,
 body {
   min-height: 100%;
 }
 
 body {
-  @apply min-h-screen bg-app-gradient font-inter flex justify-center items-center;
+  @apply min-h-screen bg-app-gradient flex justify-center items-center;
+  font-family: var(--font-family);
 }
