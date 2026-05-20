@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { GrLocation } from "react-icons/gr";
 import { FiMail } from "react-icons/fi";
 import { IoBriefcaseOutline } from "react-icons/io5";
@@ -9,15 +10,17 @@ import { BulletList } from "./components/BulletList";
 import { Header } from "./components/Header";
 import { BadgeList } from "./components/Badge/BadgeList";
 import { SocialBadgeList } from "./components/SocialBadge/SocialBadgeList";
+import type { Language } from "./i18n";
+import { translations } from "./i18n";
 
-const items = [
+const getItems = (location: string) => [
   {
     icon: FiMail,
     text: "alvarohibide@gmail.com",
   },
   {
     icon: GrLocation,
-    text: "São Paulo, Brasil",
+    text: location,
   },
   {
     icon: IoBriefcaseOutline,
@@ -37,11 +40,23 @@ const socialBadges = [
 ];
 
 function App() {
+  const [language, setLanguage] = useState<Language>("pt");
+  const t = translations[language];
+  const items = getItems(t.location);
+
+  useEffect(() => {
+    document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
+  }, [language]);
+
   return (
     <main className="w-90 md:w-lg bg-card-bg h-170 rounded-2xl relative text-primary-text flex flex-col items-center">
-      <Header />
+      <Header
+        language={language}
+        onLanguageChange={setLanguage}
+        labels={t.languageLabels}
+      />
       <Avatar />
-      <About />
+      <About name={t.name} role={t.role} description={t.about} />
       <BulletList items={items} />
       <BadgeList items={techBadges} />
       <SocialBadgeList items={socialBadges} />
