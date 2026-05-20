@@ -6,39 +6,37 @@ const OFF = BASE;
 
 type LanguageSwitchProps = {
   language: Language;
+  languages: Array<{
+    code: Language;
+    label: string;
+    shortLabel?: string;
+  }>;
   onLanguageChange: (language: Language) => void;
-  labels: Record<Language, string>;
 };
 
 export const LanguageSwitch = ({
   language,
+  languages,
   onLanguageChange,
-  labels,
 }: LanguageSwitchProps) => {
   return (
     <div
-      className="w-30 h-10 bg-card-bg rounded-[10px] text-primary-text flex justify-around items-center"
+      className="min-w-30 h-10 bg-card-bg rounded-[10px] text-primary-text flex justify-around items-center px-1 gap-1"
       aria-label="Language selector"
     >
-      <button
-        type="button"
-        onClick={() => onLanguageChange("pt")}
-        className={language === "pt" ? ACTIVE : OFF}
-        aria-pressed={language === "pt"}
-        aria-label={labels.pt}
-      >
-        🇧🇷 PT
-      </button>
-
-      <button
-        type="button"
-        onClick={() => onLanguageChange("en")}
-        className={language === "en" ? ACTIVE : OFF}
-        aria-pressed={language === "en"}
-        aria-label={labels.en}
-      >
-        🇺🇸 EN
-      </button>
+      {languages.map((item) => (
+        <button
+          type="button"
+          key={item.code}
+          onClick={() => onLanguageChange(item.code)}
+          className={language === item.code ? ACTIVE : OFF}
+          aria-pressed={language === item.code}
+          aria-label={item.label}
+          title={item.label}
+        >
+          {item.shortLabel ?? item.code.toUpperCase()}
+        </button>
+      ))}
     </div>
   );
 };

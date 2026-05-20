@@ -15,7 +15,11 @@ import { applyTheme, themeConfig } from "./config/theme";
 const getInfoItems = (language: Language) =>
   profileConfig.infoItems.map((item) => ({
     icon: detailIcons[item.icon],
-    text: item.translations?.[language] ?? item.text ?? "",
+    text:
+      item.translations?.[language] ??
+      item.translations?.[profileConfig.defaultLanguage] ??
+      item.text ??
+      "",
   }));
 
 const socialBadges = profileConfig.socialLinks.map((item) => ({
@@ -28,12 +32,19 @@ function App() {
   const [language, setLanguage] = useState<Language>(
     profileConfig.defaultLanguage,
   );
-  const t = translations[language];
+  const activeLanguage =
+    translations[language] == null ? profileConfig.defaultLanguage : language;
+  const t = translations[activeLanguage];
   const items = getInfoItems(language);
+  const availableLanguages = profileConfig.languages;
+  const currentLanguageConfig =
+    availableLanguages.find((item) => item.code === activeLanguage) ??
+    availableLanguages[0];
 
   useEffect(() => {
-    document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
-  }, [language]);
+    document.documentElement.lang =
+      currentLanguageConfig?.htmlLang ?? activeLanguage;
+  }, [activeLanguage, currentLanguageConfig]);
 
   useEffect(() => {
     applyTheme(themeConfig);
@@ -42,9 +53,9 @@ function App() {
   return (
     <main className="w-(--profile-card-width-mobile) md:w-(--profile-card-width) bg-card-bg h-(--profile-card-height) rounded-(--profile-card-radius) relative text-primary-text flex flex-col items-center">
       <Header
-        language={language}
+        language={activeLanguage}
+        languages={availableLanguages}
         onLanguageChange={setLanguage}
-        labels={t.languageLabels}
       />
       <Avatar src={profileConfig.avatar.src} alt={profileConfig.avatar.alt} />
       <About name={t.name} role={t.role} description={t.about} />

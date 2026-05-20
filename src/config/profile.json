@@ -1,5 +1,19 @@
 {
   "defaultLanguage": "pt",
+  "languages": [
+    {
+      "code": "pt",
+      "label": "Português",
+      "shortLabel": "🇧🇷 PT",
+      "htmlLang": "pt-BR"
+    },
+    {
+      "code": "en",
+      "label": "English",
+      "shortLabel": "🇺🇸 EN",
+      "htmlLang": "en"
+    }
+  ],
   "avatar": {
     "src": "/avatar.jpg",
     "alt": "Profile photo"
@@ -42,21 +56,13 @@
       "name": "Seu Nome",
       "role": "Desenvolvedor Web",
       "about": "Criando experiências digitais incríveis com código limpo e design intuitivo. Apaixonado por tecnologia e inovação.",
-      "contactButton": "Entre em Contato",
-      "languageLabels": {
-        "pt": "Português",
-        "en": "Inglês"
-      }
+      "contactButton": "Entre em Contato"
     },
     "en": {
       "name": "Your Name",
       "role": "Web Developer",
       "about": "Creating amazing digital experiences with clean code and intuitive design. Passionate about technology and innovation.",
-      "contactButton": "Get in Touch",
-      "languageLabels": {
-        "pt": "Portuguese",
-        "en": "English"
-      }
+      "contactButton": "Get in Touch"
     }
   }
 }

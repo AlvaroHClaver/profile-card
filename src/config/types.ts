@@ -1,6 +1,6 @@
 import type { detailIcons, socialIcons } from "./icons";
 
-export type Language = "pt" | "en";
+export type Language = string;
 export type DetailIconName = keyof typeof detailIcons;
 export type SocialIconName = keyof typeof socialIcons;
 
@@ -8,6 +8,12 @@ export type LocalizedText = Record<Language, string>;
 
 export type ProfileConfig = {
   defaultLanguage: Language;
+  languages: Array<{
+    code: Language;
+    label: string;
+    shortLabel?: string;
+    htmlLang?: string;
+  }>;
   avatar: {
     src: string;
     alt: string;
@@ -33,7 +39,6 @@ export type ProfileConfig = {
       role: string;
       about: string;
       contactButton: string;
-      languageLabels: Record<Language, string>;
     }
   >;
 };

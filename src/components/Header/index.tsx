@@ -3,21 +3,25 @@ import { LanguageSwitch } from "../LanguageSwitch";
 
 type HeaderProps = {
   language: Language;
+  languages: Array<{
+    code: Language;
+    label: string;
+    shortLabel?: string;
+  }>;
   onLanguageChange: (language: Language) => void;
-  labels: Record<Language, string>;
 };
 
 export const Header = ({
   language,
+  languages,
   onLanguageChange,
-  labels,
 }: HeaderProps) => {
   return (
     <header className="w-full bg-header-bg h-[var(--header-height)] rounded-t-[var(--profile-card-radius)] flex justify-end p-2.5">
       <LanguageSwitch
         language={language}
+        languages={languages}
         onLanguageChange={onLanguageChange}
-        labels={labels}
       />
     </header>
   );
