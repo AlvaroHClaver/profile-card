@@ -12,6 +12,7 @@ import { BadgeList } from "./components/Badge/BadgeList";
 import { SocialBadgeList } from "./components/SocialBadge/SocialBadgeList";
 import type { Language } from "./i18n";
 import { translations } from "./i18n";
+import { MailToButton } from "./components/MailToButton";
 
 const getItems = (location: string) => [
   {
@@ -38,6 +39,7 @@ const socialBadges = [
     link: "https://linkedin.com",
   },
 ];
+const email = "alvarohibide@gmail.com";
 
 function App() {
   const [language, setLanguage] = useState<Language>("pt");
@@ -60,6 +62,7 @@ function App() {
       <BulletList items={items} />
       <BadgeList items={techBadges} />
       <SocialBadgeList items={socialBadges} />
+      <MailToButton email={email} label={t.contactButton} />
     </main>
   );
 }

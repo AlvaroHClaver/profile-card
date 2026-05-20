@@ -24,6 +24,7 @@ export default {
           "linear-gradient(135deg, #0F172B 0%, #162456 50%, #000 100%)",
         "header-bg":
           "linear-gradient(90deg, rgba(28, 57, 142, 0.50) 0%, rgba(49, 44, 133, 0.50) 100%)",
+        "action-gradient": "linear-gradient(90deg, #155DFC 0%, #4F39F6 100%)",
       },
     },
   },
