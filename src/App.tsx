@@ -1,12 +1,14 @@
 import { GrLocation } from "react-icons/gr";
 import { FiMail } from "react-icons/fi";
 import { IoBriefcaseOutline } from "react-icons/io5";
+import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 import "./App.css";
 import { About } from "./components/About";
 import { Avatar } from "./components/Avatar";
 import { BulletList } from "./components/BulletList";
 import { Header } from "./components/Header";
 import { BadgeList } from "./components/Badge/BadgeList";
+import { SocialBadgeList } from "./components/SocialBadge/SocialBadgeList";
 
 const items = [
   {
@@ -23,6 +25,16 @@ const items = [
   },
 ];
 const techBadges = ["React", "TypeScript", "Java", "SpringBoot"];
+const socialBadges = [
+  {
+    icon: IoLogoGithub,
+    link: "https://github.com/alvaro",
+  },
+  {
+    icon: IoLogoLinkedin,
+    link: "https://linkedin.com",
+  },
+];
 
 function App() {
   return (
@@ -32,6 +44,7 @@ function App() {
       <About />
       <BulletList items={items} />
       <BadgeList items={techBadges} />
+      <SocialBadgeList items={socialBadges} />
     </main>
   );
 }
