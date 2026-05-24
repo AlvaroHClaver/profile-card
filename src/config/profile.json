@@ -19,7 +19,7 @@
     "alt": "Profile photo"
   },
   "contact": {
-    "email": "alvarohibide@gmail.com"
+    "email": "alvaro@mail.com"
   },
   "infoItems": [
     {
@@ -35,14 +35,14 @@
     },
     {
       "icon": "briefcase",
-      "text": "Netcracker do Brasil"
+      "text": "Your company"
     }
   ],
   "techBadges": ["React", "TypeScript", "Java", "SpringBoot"],
   "socialLinks": [
     {
       "icon": "github",
-      "url": "https://github.com/alvaro",
+      "url": "https://github.com",
       "label": "GitHub"
     },
     {
