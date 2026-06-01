@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import { About } from "./components/About";
 import { Avatar } from "./components/Avatar";
 import { BulletList } from "./components/BulletList";
@@ -51,7 +50,7 @@ function App() {
   }, []);
 
   return (
-    <main className="w-(--profile-card-width-mobile) md:w-(--profile-card-width) bg-card-bg h-(--profile-card-height) rounded-(--profile-card-radius) relative text-primary-text flex flex-col items-center">
+    <main className="w-(--profile-card-width-mobile) md:w-(--profile-card-width) bg-card-bg rounded-(--profile-card-radius) relative text-primary-text flex flex-col items-center">
       <Header
         language={activeLanguage}
         languages={availableLanguages}

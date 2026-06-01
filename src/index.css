@@ -28,7 +28,6 @@
     rgba(49, 44, 133, 0.5) 100%
   );
   --header-height: 8rem;
-  --profile-card-height: 42.5rem;
   --profile-card-radius: 1rem;
   --profile-card-width: 32rem;
   --profile-card-width-mobile: 90vw;
@@ -36,7 +35,7 @@
 
 html,
 body {
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 body {
