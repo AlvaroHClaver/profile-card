@@ -18,6 +18,10 @@ The project is designed to be easy to fork and customize. Content and theme sett
 - Configurable icon mapping through `src/config/icons.ts`
 - Simple component structure for deeper customization
 
+## Screenshot
+
+![Application screenshot](screenshots/demo.png)
+
 ## Getting Started
 
 ### Install dependencies
@@ -42,6 +46,33 @@ npm run build
 
 ```bash
 npm run lint
+```
+
+### Run with Docker
+
+Build the Docker image:
+
+```bash
+docker build -t profile-card .
+```
+
+Run the container:
+
+```bash
+docker run --name profile-card -p 8080:80 profile-card
+```
+
+After starting the container, access the application at:
+
+```text
+http://localhost:8080
+```
+
+To stop and remove the container:
+
+```bash
+docker stop profile-card
+docker rm profile-card
 ```
 
 ## Project Structure
